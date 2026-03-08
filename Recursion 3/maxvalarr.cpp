@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <iostream>
 #include <climits>
 using namespace std;
@@ -20,3 +21,6 @@ int main()
     int n = sizeof(arr)/sizeof(arr[0]);
     maxval(arr, n, 0, INT_MIN);
 }
+=======
+#include
+>>>>>>> 9d8e5db342dbf569f8b6d82ea5838dad2419f35b

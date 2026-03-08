@@ -63,9 +63,13 @@
     "string": "cpp",
     "unordered_map": "cpp",
     "vector": "cpp",
+<<<<<<< HEAD
     "initializer_list": "cpp",
     "new": "cpp",
     "random": "cpp"
+=======
+    "initializer_list": "cpp"
+>>>>>>> 9d8e5db342dbf569f8b6d82ea5838dad2419f35b
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
