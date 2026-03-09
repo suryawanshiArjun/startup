@@ -116,27 +116,44 @@ class Doublylinkedlist{
     }
     void deleteAtIndex(int idx)
     {
-        if(size==0)
-        {
+        if(size==0){
             cout<<"Size is empty";
             return;
         }
-        if(size<0 || idx >=size) {
+
+        if(idx < 0 || idx >= size){
             cout<<"Invalid index";
-             return;
+            return;
         }
-        else if(idx==0) return deleteathead();
-        else if(idx==(size-1)) return deleteAtTail();
-        else
-        {
-            Node* temp =head;
-            for(int i=0; i<idx; i++)
-            {
-                temp=temp->next;
-            }
-            temp->next=temp->next->next;
-            size--;
+
+        if(idx==0){
+            deleteathead();
+            return;
         }
+
+        if(idx==size-1){
+            deleteAtTail();
+            return;
+        }
+
+        Node* temp;
+
+        if(idx < size/2){
+            temp = head;
+            for(int i=0;i<idx;i++)
+                temp = temp->next;
+        }
+        else{
+            temp = tail;
+            for(int i=size-1;i>idx;i--)
+                temp = temp->prev;
+        }
+
+        temp->prev->next = temp->next;
+        temp->next->prev = temp->prev;
+
+        delete temp;
+        size--;
     }
     void display()
     {
@@ -165,6 +182,8 @@ int main()
     list.deleteAtTail();
     list.display();
     list.deleteathead();
+    list.display();
+    list.deleteAtIndex(2);
     list.display();
     return 0;
 }
